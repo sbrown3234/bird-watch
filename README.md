@@ -10,9 +10,12 @@
     <li>Database Management: PostgresSQL</li>
     <li>Content Management: Amazon Web Services</li>
   </ul>
-  
+
 <h1>Landing Page</h1>
-<img style="height:300px; width:300px;" src="./assets/landing-page">
+<div style="display:flex; flex-direction: row; justify-content: space-between; align-items: center;">
+  <img style="height:300px; width:300px;" src="./assets/landing">
+  <img style="height:300px; width:300px;" src="./assets/images">
+</div>
 <p>Users are greated with a landing page that prompts them to upload a photo, if there are none availalbe, or a container
 full of all the available photos on the web-application.</p>
 

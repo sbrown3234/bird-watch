@@ -13,44 +13,44 @@
   <script src="app/routes.js"></script>
   <script src="script.js"></script>
 </head>
+
 <body alt="photo courtesy of Pok Rie -- from Pexels">
+
   <header>
     <a ui-sref="home"><img src="./images/icon.svg"></a>
   </header>
 
-    <div id="images-container" ui-view='main'>
+  <div id="module" ui-view="image">
+  </div>
 
+  <div id="images-container" ui-view='main'>
 
-      <div id="image-module" ui-view="image">
+    <main ng-controller='mainController'>
+      <div id="image-placeholder"ng-if="images.length == 0">
+        <h1>Be the first to show  <br/> us your birds! --></h1>
       </div>
-
-      <main ng-controller='mainController'>
-        <div id="image-placeholder"ng-if="images.length == 0">
-          <h1>Be the first to show  <br/> us your birds! --></h1>
-        </div>
-        <div id="image-wrapper" ng-if="images.length > 0">
-          <span ng-repeat="image in images">
-            <div class="images">
-              <a ui-sref="image({ picId: {{image.id}} })"><img src={{image.image}} alt={{image.description}}></a>
-              <h1>{{image.title}}</h1>
-            </div>
-          </span>
-        </div>
-      </main>
-
-      <div id="upload-container" ng-controller='upload'>
-        <form method="POST" ng-submit='submit()'>
-          <h1>Did'ya spot a bird? Share it!</h1>
-          <input ng-model="username" type="text" name="username" placeholder="Your Name">
-          <input ng-model="title" type="text" name="title" placeholder="Breed / Location">
-          <input ng-model="observations" type="text" name="observations" placeholder="Observations">
-          <input ng-model="file" type="file" name="file" placeholder="file">
-          <button type="submit" name="button"> Squawk </button>
-        </form>
+      <div id="image-wrapper" ng-if="images.length > 0">
+        <span ng-repeat="image in images">
+          <div class="images">
+            <a ui-sref="image({ picId: {{image.id}} })"><img src={{image.image}} alt={{image.description}}></a>
+            <h1>{{image.title}}</h1>
+          </div>
+        </span>
       </div>
+    </main>
 
-
+    <div id="upload-container" ng-controller='upload'>
+      <form method="POST" ng-submit='submit()'>
+        <h1>Did'ya spot a bird? Share it!</h1>
+        <input ng-model="username" type="text" name="username" placeholder="Your Name">
+        <input ng-model="title" type="text" name="title" placeholder="Breed / Location">
+        <input ng-model="observations" type="text" name="observations" placeholder="Observations">
+        <input ng-model="file" type="file" name="file" placeholder="file">
+        <button type="submit" name="button"> Squawk </button>
+      </form>
     </div>
+
+  </div>
 
   <footer>
     <div id="footer-content">
@@ -60,5 +60,6 @@
       <p>&copy; Stephen Brown</p>
     </div>
   </footer>
+
 </body>
 </html>

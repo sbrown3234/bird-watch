@@ -2,28 +2,22 @@
   <h1>{{image.title}}</h1>
 
   <div id="image-container">
-      <div id="module-image">
-      <img src="{{image.image}}" alt="{{image.description}}">
+    <div id="module-image">
+      <img src="{{image.image}}" alt="{{image.title}}" />
       <h3>Credit: {{image.username}}</h3>
       <h3>Observations: {{image.observations}}</h3>
-      <h3>Tags:</h3>
-      <div id="hashtags" ng-if="hashtags.length > 0">
-        <span ng-repeat="for hashtag in hashtags">
-          <a class="tags" ui-sref="images({hashtag: {{hashtag}}})"><span>{{hashtag}}</span></a>
-        </span>
-      </div>
     </div>
     <div id="comments-list" ng-if="comments.length > 0">
       <button type="submit" ng-click="moreComments()" id="more-button">{{moreButton}}</button>
-        <span ng-repeat= "comment in comments">
-          <div class="comment">
-            <div class="name-date">
-              <h3>{{comment.username}}</h3><h3>{{comment.created_at}}</h3>
-            </div>
-            <h3>{{comment.comment}}</h3>
+      <span ng-repeat= "comment in comments">
+        <div class="comment">
+          <div class="name-date">
+            <h3>{{comment.username}}</h3><h3>{{comment.created_at}}</h3>
           </div>
-        </span>
-      </div>
+          <h3>{{comment.comment}}</h3>
+        </div>
+      </span>
+    </div>
   </div>
 
   <div id="comment-upload">
