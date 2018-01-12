@@ -6,7 +6,6 @@ body {
   min-height: 100vh;
   background-image: url('./images/pexels-photo-707049.jpeg');
   font-family: 'Roboto', sans-serif;
-  overflow: hidden;
 }
 
 header {
@@ -178,12 +177,12 @@ footer {
 #module {
   z-index: 1000;
   margin: auto;
-  margin-top: 75px;
   position: absolute;
-  display: flex;
-  justify-content: center;
-  text-align: center;
+  align-self: center;
+  margin-top: 75px;
   background-color: rgba(0, 0, 0, 0.5);
+  overflow: auto;
+  max-height: 750px;
 }
 
 #select-image {
@@ -192,6 +191,7 @@ footer {
   flex-direction: column;
   justify-content: space-between;
   align-items: center;
+  text-align: center;
   background-color: rgba(255, 255, 255, 0.7);
 }
 
@@ -206,6 +206,8 @@ footer {
   flex-direction: column;
   justify-content: center;
   align-content: center;
+  align-items: center;
+  text-align: center;
 }
 
 #module-image {
@@ -214,6 +216,8 @@ footer {
   display: flex;
   flex-direction: column;
   align-content: center;
+  align-items: center;
+  text-align: center;
 }
 
 #module-image img {
@@ -224,21 +228,24 @@ footer {
 #comments-list {
   display: flex;
   flex-direction: column;
-  justify-content: space-around;
 }
 
 .comment {
   display: flex;
   flex-direction: column;
-  justify-content: center;
-  align-content: left;
+  text-align: left;
+  border-top: 2px solid rgba(0,0,0, 0.5);
 }
 
 .name-date {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
-  align-items: flex-start;
+  text-align: left;
+}
+
+#more {
+  visibility: hidden;
 }
 
 #comment-upload {

@@ -13,8 +13,8 @@
 
 <h1>Landing Page</h1>
 <div style="display:flex; flex-direction: row; justify-content: space-between; align-items: center;">
-  <img style="height:300px; width:300px;" src="./assets/landing">
-  <img style="height:300px; width:300px;" src="./assets/images">
+  <img style="height:300px; width:300px;" src="./assets/landing-page.png">
+  <img style="height:300px; width:300px;" src="./assets/images2.gif">
 </div>
 <p>Users are greated with a landing page that prompts them to upload a photo, if there are none availalbe, or a container
 full of all the available photos on the web-application.</p>
@@ -22,8 +22,8 @@ full of all the available photos on the web-application.</p>
 <h1>Viewing an individual image</h1>
 <p>Users can then select an image and view it in a smaller module, allowing them to see any observations made by the uploader about the bird, the species and location, and any comments left by other users. Additionally, users can leave their own comments.</p>
   <div style="display:flex; flex-direction: row; justify-content: space-between; align-items: center;">
-    <img style="height:300px; width:300px;" src="./assets/selected-image">
-    <img style="height:300px; width:300px;" src="./assets/comments">
+    <img style="height:300px; width:300px;" src="./assets/selected-image.png">
+    <img style="height:300px; width:300px;" src="./assets/comments.gif">
   </div>
 
 <h1>Features In-Development</h1>

@@ -47,7 +47,7 @@
   exports.getComments = (id) => {
     const q = `SELECT * FROM comments
     WHERE pic_id=$1
-    ORDER BY created_at DESC;`
+    ORDER BY created_at ASC;`
     const params = [id];
     return db.query(q, params).then((results) => {
       return results.rows

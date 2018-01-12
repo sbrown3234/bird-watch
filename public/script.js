@@ -52,7 +52,6 @@
     $http.get('/images/'+ $stateParams.picId).then(({data}) => {
       getComments()
       $scope.image = data.image
-
     })
 
     $scope.username = '';
@@ -66,31 +65,33 @@
       commData.comment = comment
       commData.imageId = $stateParams.picId
 
+      console.log('comdata: ', commData)
+
       $http({
         url: 'images/' + $stateParams.picId  + '/comments/',
         method: "POST",
         data: commData
       }).then(() => {
-        getComments($stateParams.picId)
         $scope.comment = '';
         $scope.username = '';
+        getComments()
       }).catch((err) => {
         console.log('err in comment HTTPost: ', err)
       })
     }
 
-    function getComments(picId) {
-      $http.get('/images/'+ picId).then(({data}) => {
+    function getComments() {
+      $http.get('/images/'+ $stateParams.picId).then(({data}) => {
         $scope.limit = 5;
         $scope.comments = data.comments;
-        $scope.moreButton = 'Load more comments...';
-
-      function moreComments() {
+        $scope.moreButton = "Load more comments..";
+        if ($scope.limit < data.comments.length) {
+          $('#more').css('visibility', 'visible');
+        }
+      $scope.moreComments = () => {
           $scope.limit += 5;
           if ($scope.limit >= data.comments.length) {
-            $('#more-button').css({
-              visibility: hidden
-            });
+            $('#more').css('visibility', 'hidden');
           }
         };
 

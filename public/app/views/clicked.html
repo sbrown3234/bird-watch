@@ -8,15 +8,13 @@
       <h3>Observations: {{image.observations}}</h3>
     </div>
     <div id="comments-list" ng-if="comments.length > 0">
-      <button type="submit" ng-click="moreComments()" id="more-button">{{moreButton}}</button>
-      <span ng-repeat= "comment in comments">
+      <span ng-repeat= "comment in comments | limitTo: limit">
         <div class="comment">
-          <div class="name-date">
-            <h3>{{comment.username}}</h3><h3>{{comment.created_at}}</h3>
-          </div>
-          <h3>{{comment.comment}}</h3>
+          <p>{{comment.username}}</p><br/><h3>{{comment.comment}}</h3>
         </div>
       </span>
+    <div id="more">
+      <button type="submit" ng-click="moreComments()">{{moreButton}}</button>
     </div>
   </div>
 

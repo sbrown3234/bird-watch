@@ -39,7 +39,9 @@
   app.post('/images/:picId/comments', (req,res) => {
     const picId = req.params.picId;
 
-    db.insertComment(req.body, picId)
+    db.insertComment(req.body, picId).then(() => {
+      res.json({success: true})
+    })
   })
 
   app.get('/images/:picId', (req, res) => {
